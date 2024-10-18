@@ -18,9 +18,23 @@ namespace Szamonkeres2
                 Console.Write($"Adja meg a {i + 1} számot: ");
                 if (int.TryParse(Console.ReadLine(), out int number))
                 {
-
+                    if (number > 0)
+                    {
+                        positiveSum += number;
+                    }
+                    else if (number < 0)
+                    {
+                        negativeSum += number;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Érvényes egész számot adjon meg");
+                    i--;
                 }
             }
+            Console.WriteLine($"A pozitív számok összege: {positiveSum}");
+            Console.WriteLine($"A negatív számok összege: {negativeSum}");
         }
     }
 }
